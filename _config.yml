@@ -1,5 +1,6 @@
 # Site Settings
 lang: en
+theme: bulma-clean-theme
 title: Lutfisan Personal Blog
 tagline: lutfisan
 email: m_lutfi_santoso@yahoo.co.id
