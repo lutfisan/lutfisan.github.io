@@ -1,7 +1,7 @@
 # Site Settings
 lang: en
 # With GitHub Pages Gem
-remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
+remote_theme: chrisrhymes/bulma-clean-theme@v1.3.0
 future: true
 title: Lutfisan Personal Blog
 tagline: lutfisan
@@ -21,7 +21,7 @@ gh_sponsor: chrisrhymes
 #theme_color: '#eeeeee'
 #fixed_navbar: top
 #direction: one of <ltr, rtl, auto>, default: ltr
-force_theme: light
+# force_theme: light
 
 paginate: 5
 paginate_path: "/blog/page:num"
