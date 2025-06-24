@@ -1,6 +1,7 @@
 # Site Settings
 lang: en
-remote_theme: chrisrhymes/bulma-jekyll-theme
+# With GitHub Pages Gem
+remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 future: true
 title: Lutfisan Personal Blog
 tagline: lutfisan
