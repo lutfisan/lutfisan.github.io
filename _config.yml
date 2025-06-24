@@ -1,6 +1,6 @@
 # Site Settings
 lang: en
-With GitHub Pages Gem
+# With GitHub Pages Gem
 remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 # theme: minima
 future: true
