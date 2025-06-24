@@ -1,8 +1,8 @@
 # Site Settings
 lang: en
-# With GitHub Pages Gem
-# remote_theme: chrisrhymes/bulma-clean-theme@v1.3.0
-theme: minima
+With GitHub Pages Gem
+remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
+# theme: minima
 future: true
 title: Lutfisan Personal Blog
 tagline: lutfisan
