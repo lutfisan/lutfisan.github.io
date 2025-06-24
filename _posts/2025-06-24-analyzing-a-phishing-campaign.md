@@ -22,3 +22,4 @@ graph TD;
     Internal_Network --> HR_Segment;
     Internal_Network --> Engineering_Segment;
     Internal_Network --> Critical_Servers;
+```
