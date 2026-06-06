@@ -1,0 +1,22 @@
+{
+  "name": "lutfisan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/marked": "^5.0.2",
+    "@types/node": "^25.9.2",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.5",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
