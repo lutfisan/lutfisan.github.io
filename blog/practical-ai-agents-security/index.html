@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building Practical AI Agents for Security Workflows</title>
+  <meta name="description" content="Exploring how multi-agent architectures can orchestrate complex security data gathering and analysis tasks, bridging the gap between chat interfaces and actionable operations.">
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+<body class="bg-[--color-background] text-[--color-text] font-body antialiased">
+  <header class="h-16 border-b border-border flex items-center mb-8">
+    <div class="max-w-3xl mx-auto px-6 w-full flex items-center justify-between">
+      <a href="/blog/" class="font-mono font-bold tracking-tight text-accent hover:underline">← Back to Blog</a>
+    </div>
+  </header>
+  <div class="max-w-3xl mx-auto pb-20 px-6 prose prose-invert prose-a:text-accent hover:prose-a:text-accent/80">
+    <h1 class="text-4xl font-display font-bold mb-4">Building Practical AI Agents for Security Workflows</h1>
+    <div class="text-muted mb-8 font-mono text-sm">2026-06-01 • 2 min read</div>
+    <h1>Building Practical AI Agents for Security Workflows</h1>
+<p>The hype around LLMs often focuses on chatbots, but their true potential in cybersecurity lies in <strong>agentic workflows</strong>—systems where the AI can plan, use tools, and interact with the environment to achieve complex goals.</p>
+<p>In this post, I&#39;ll discuss how we can build practical AI agents to orchestrate security workflows.</p>
+<h2>Moving Beyond Chat</h2>
+<p>A standard conversational LLM requires the user to constantly prompt and manually stitch together results. An AI agent, however, can be given a high-level task:</p>
+<p><em>&quot;Investigate the recent login failures from IP 192.168.1.50 and cross-reference with our threat intelligence feeds.&quot;</em></p>
+<p>The agent can then autonomously:</p>
+<ol>
+<li>Query the SIEM for the raw logs.</li>
+<li>Call a Python script to format the data.</li>
+<li>Query an external Threat Intel API (e.g., VirusTotal).</li>
+<li>Summarize the findings into an actionable report.</li>
+</ol>
+<h2>The Architecture</h2>
+<p>Building this requires a multi-agent framework. Tools like LangChain or custom orchestration layers allow us to define specific <strong>personas</strong> and <strong>tools</strong>:</p>
+<ul>
+<li><strong>The Investigator Agent</strong>: Has read-access to the SIEM via API.</li>
+<li><strong>The Analyst Agent</strong>: Synthesizes data and writes the report.</li>
+</ul>
+<h2>Practical Considerations</h2>
+<p>While agents are powerful, they require strict boundaries in security environments:</p>
+<ul>
+<li><strong>Read-Only Access</strong>: Start by giving agents read-only access to logs and metrics.</li>
+<li><strong>Human-in-the-Loop</strong>: Any action that modifies state (e.g., blocking an IP, disabling an account) MUST require explicit human approval.</li>
+<li><strong>Audit Trails</strong>: Every tool call and decision made by the agent must be logged.</li>
+</ul>
+<p>By carefully designing agent capabilities and permissions, we can significantly accelerate incident response and operational visibility without sacrificing control.</p>
+
+  </div>
+</body>
+</html>

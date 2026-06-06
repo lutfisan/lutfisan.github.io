@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automating CyberArk Configurations with Python</title>
+  <meta name="description" content="How I reduced multivendor configuration processing time from 24 hours to under 15 minutes using async Python and the CyberArk REST API.">
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+<body class="bg-[--color-background] text-[--color-text] font-body antialiased">
+  <header class="h-16 border-b border-border flex items-center mb-8">
+    <div class="max-w-3xl mx-auto px-6 w-full flex items-center justify-between">
+      <a href="/blog/" class="font-mono font-bold tracking-tight text-accent hover:underline">← Back to Blog</a>
+    </div>
+  </header>
+  <div class="max-w-3xl mx-auto pb-20 px-6 prose prose-invert prose-a:text-accent hover:prose-a:text-accent/80">
+    <h1 class="text-4xl font-display font-bold mb-4">Automating CyberArk Configurations with Python</h1>
+    <div class="text-muted mb-8 font-mono text-sm">2026-06-05 • 2 min read</div>
+    <h1>Automating CyberArk Configurations with Python</h1>
+<p>Managing Privileged Access Management (PAM) across a massive, multivendor infrastructure environment is challenging. Manual processing of configuration data across thousands of devices can take days and is prone to human error.</p>
+<p>In this post, I will share the methodology behind a Python-based automation workflow that significantly accelerated our CyberArk configuration processing—bringing completion times down from approximately 24 hours to under 15 minutes.</p>
+<h2>The Challenge</h2>
+<p>We were dealing with a large-scale device estate where device configuration datasets needed to be validated, formatted, and pushed to the CyberArk infrastructure. The manual process involved:</p>
+<ol>
+<li>Extracting data from multiple NMS platforms.</li>
+<li>Standardizing the format using spreadsheets.</li>
+<li>Manually executing batches.</li>
+</ol>
+<p>This workflow simply wasn&#39;t scaling.</p>
+<h2>The Solution</h2>
+<p>Using Python&#39;s <code>asyncio</code> and <code>aiohttp</code>, alongside the CyberArk REST API, we built an async pipeline. </p>
+<pre><code class="language-python">import asyncio
+import aiohttp
+
+async def process_batch(session, accounts):
+    tasks = []
+    for account in accounts:
+        task = asyncio.create_task(add_account(session, account))
+        tasks.append(task)
+    return await asyncio.gather(*tasks)
+</code></pre>
+<h2>Results</h2>
+<p>By moving to an async automation model, we achieved:</p>
+<ul>
+<li><strong>Massive Time Savings</strong>: A 98% reduction in processing time.</li>
+<li><strong>Improved Accuracy</strong>: Eliminated copy-paste errors.</li>
+<li><strong>Operational Visibility</strong>: Generated automated logs for auditability.</li>
+</ul>
+<p>Automation isn&#39;t just about speed; it&#39;s about freeing up security professionals to focus on high-value threat analysis rather than data entry.</p>
+
+  </div>
+</body>
+</html>
